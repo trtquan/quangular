@@ -1,0 +1,13 @@
+@import '../../../styles';
+
+mat-card {
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 0;
+  mat-card-header {
+    background-color: mat-color($app-primary);
+  }
+  mat-card-content {
+    padding: 10px;
+  }
+}
