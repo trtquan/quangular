@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 
 
@@ -16,12 +17,14 @@ export class AuthComponent implements OnInit {
   isSubmitting: boolean;
   constructor(
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private myRoute: Router,
+    private auth: AuthService
   ) {
     // use FormBuilder to create a form group
     this.authForm = formBuilder.group({
-      'email': [' ', [Validators.required, Validators.email]],
-      'password': [' ', Validators.required]
+      'email': ['', [Validators.required]],
+      'password': ['', Validators.required]
     });
   }
 
@@ -34,7 +37,11 @@ export class AuthComponent implements OnInit {
 
   submitForm(): void {
     this.isSubmitting = true;
-    const credentials = this.authForm;
-    console.log(credentials);
+    if (this.authForm.valid) {
+      this.auth.sendToken(this.authForm.value.email);
+      this.myRoute.navigate(['home']);
+    } else {
+      this.auth.sendToken('');
+    }
   }
 }

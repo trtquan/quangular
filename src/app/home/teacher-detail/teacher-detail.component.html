@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card *ngIf="teacher">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{teacher.id}}</mat-card-title>
@@ -12,6 +12,5 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <mat-icon class="mat-icon-rtl-mirror" svgIcon="thumb-up"></mat-icon>
   </mat-card-actions>
 </mat-card>
