@@ -1,0 +1,22 @@
+@import '../../../styles';
+
+mat-toolbar {
+  span {
+    padding: 16px;
+  }
+  height: 40px;
+  .mat-list-item {
+    font-size: 17px;
+    font-weight: none;
+    color: white;
+    text-decoration: none;
+  }
+  .first-row {
+    background-color: mat-color($app-accent);
+    color: mat-color($app-primary);
+  }
+  .second-row {
+    background-color: mat-color($app-primary);
+  }
+}
+
