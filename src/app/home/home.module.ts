@@ -14,6 +14,7 @@ import {
   MatGridListModule,
   MatIconModule
 } from '@angular/material';
+import { TeacherDetailComponent } from './teacher-detail/teacher-detail.component';
 
 @NgModule({
   imports: [
@@ -28,6 +29,6 @@ import {
     MatGridListModule,
     MatIconModule
   ],
-  declarations: [TeacherListComponent]
+  declarations: [TeacherListComponent, TeacherDetailComponent]
 })
 export class HomeModule { }

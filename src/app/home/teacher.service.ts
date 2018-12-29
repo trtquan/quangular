@@ -21,8 +21,11 @@ export class TeacherService {
       );
   }
 
-  getTeacher(): Observable<Teacher> {
-    consy url =
+  getTeacher(id: number): Observable<Teacher> {
+    const url = `${this.teacheresUrl}/${id}`;
+    return this.http.get<Teacher>(url).pipe(
+      catchError(this.handleError<Teacher>(`getHero id=${id}`))
+    );
   }
   /**
    * Handle Http operation that failed.
