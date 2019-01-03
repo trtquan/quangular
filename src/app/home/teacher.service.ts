@@ -6,7 +6,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Teacher } from './techer-model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TeacherService {
   private teacheresUrl = 'api/teacheres';
